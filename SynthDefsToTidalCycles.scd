@@ -93,3 +93,4 @@ SynthDef("acidbass", {|out=0, gate=1, n=31, amp=0.1, pan=0, decay, attack=0.01, 
 	OffsetOut.ar(out, Pan2.ar(son, pan));
 }).add;
 )
+
