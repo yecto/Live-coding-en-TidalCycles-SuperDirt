@@ -1,0 +1,88 @@
+
+(sc6, shape) <- scStream "organ02" [ F "amp" (Just 1.2),
+                                  F "freq" (Just 30),
+                                  F "attack" (Just 0.01),
+                                  F "decay" (Just 0.01),
+                                  F "sustain" (Just 0.01),
+                                  F "dur" (Just 0.1),
+                                  F "release" (Just 0.2),
+                                  I "gate" (Just 0),
+                                  F "mix" (Just 0.5),
+                                  F "room" (Just 0.5),
+                                  F "damp" (Just 0.5),
+                                  F "lfo" (Just 0.5),
+                                  F "feedback" (Just 0.5),
+                                  F "drywet" (Just 0.5)
+                ]0
+
+let amp     = makeF shape "amp"
+    freq    = makeF shape "freq"
+    attack  = makeF shape "attack"
+    decay   = makeF shape "decay"
+    sustain = makeF shape "sustain"
+    release = makeF shape "release"
+    dur     = makeF shape "dur"
+    gate     = makeI shape "gate"
+    mix     = makeF shape "mix"
+    room    = makeF shape "room"
+    damp    = makeF shape "damp"
+    lfo     = makeF shape "lfo"
+    feedback = makeF shape "feedback"
+    drywet   = makeF shape "drywet" 
+
+(cps, getNow) <- bpsUtils
+(d1, t1) <- superDirtSetters getNow
+(d2, t2) <- superDirtSetters getNow
+(d3, t3) <- superDirtSetters getNow
+(d4, t4) <- superDirtSetters getNow
+(d5, t5) <- superDirtSetters getNow
+(d6, t6) <- superDirtSetters getNow
+(d7, t7) <- superDirtSetters getNow
+(d8, t8) <- superDirtSetters getNow
+(d9, t9) <- superDirtSetters getNow
+(d10, t10) <- superDirtSetters getNow
+
+let hush = mapM_ ($ silence) [d1,d2,d3,d4,d5,d6,d7,d8,d9,d10]
+
+let solo = (>>) hush
+
+hush
+
+d1 $ slow 8 $ every 2 (# s "lfpulse") $ n "e3*2 [b3*2 gs4]"
+   # s "lfsaw"
+   # gain "0.45"
+   # attack "0.01"
+   # decay "1"
+   # sustain "2"
+   # release "4"
+   # lfo "2"
+   # gate "1"
+   # room "0.2"
+   # size "0.97"
+   # vowel "x"
+   # orbit "1"
+
+d2 $ slow 8 $ jux (striate 4) $ n "e4(3,8) [b5*2 gs5]"
+   # s "sinosc"
+   # gain "0.8"
+   # attack "0.01"
+   # release "1"
+   # drywet (slow 8 $ scale 0 12 sine1)
+   # room "0.1"
+   # size "0.97"
+   # orbit "2"
+
+d3 $ slow 2 $ jux (striate 2) $ s "~ tr808ch ~ glitch" 
+   # cut "1"
+   # n "0 2" 
+   # gain "0.8"
+   # room "0.1"
+   # size "0.97"
+   # orbit "3"
+
+d4 $ slow 2 $ brak $ s "tr707bd tr626sn" 
+   # gain "0.9 0.8"
+   # n "0 4"
+   # room "0.05"
+   # size "0.1"
+   # orbit "4"   
