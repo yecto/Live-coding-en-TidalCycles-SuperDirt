@@ -6,3 +6,6 @@
 
 - Para instalar TidalCycles necesitamos seguir paso a paso, ésto dependerá de nuestro sistema operativo. - http://tidalcycles.org/getting_started.html
 
+- Algunos sampleos percusivos principalmente serán compartidos en el Laboratorio, sin embargo aquí hay un enlace a los sampleos originales que TidalCycles incluye - 
+
+
