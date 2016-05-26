@@ -5,3 +5,4 @@
 - Lo primero que necesitamos es instalar SuperCollider - http://supercollider.github.io/ para OSX es necesario descargar SuperCollider 3.7 - http://supercollider.github.io/download - en cambio para el caso de Ubuntu Studio es necesario seguir éstas instrucciones - https://github.com/supercollider/supercollider/blob/master/README_LINUX.md
 
 - Para instalar TidalCycles necesitamos seguir paso a paso, depende de nuestro sistema operativo. - http://tidalcycles.org/getting_started.html
+
