@@ -1,8 +1,6 @@
 # Live-coding-en-TidalCycles-SuperDirt
 
-- Esencial para el laboratorio de Live Coding en TidalCycles + SuperDirt.
-
-Éste repositorio sirve como una especie de contendedor de diversos archivos que pueden encontrarse en la red, su principal objetivo es agilizar el proceso y mantenernos manos a la obra, además cualquiera de ustedes puede colaborar a lo propuesto aquí.
+Éste repositorio sirve como una especie de contendedor de diversos archivos que pueden encontrarse en la red, los cuales son esenciales para el laboratorio de Live Coding en TidalCycles + SuperDirt. Nuestro principal objetivo es agilizar el proceso y mantenernos manos a la obra, además cualquiera de ustedes puede colaborar a lo propuesto aquí.
 
 - Lo primero que necesitamos es instalar SuperCollider - http://supercollider.github.io/
 
